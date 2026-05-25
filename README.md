@@ -11,13 +11,13 @@ Faça uma bifurcação do repositorio e customize como quiser.
 Copie o endereço do arquivo e cole no seu arquivo desejado no Obsidian.
 
 ```
-<iframe src="link_da_pagina" width="100%" height="100px"></iframe>
+<iframe src="https://joaopedro-chaves.github.io/clock-iframe-obisidian/" width="100%" height="100px"></iframe>
 ```
 
 ## Git Clone
 
 ```
-git clone 
+git clone https://github.com/joaopedro-chaves/clock-iframe-obisidian
 ```
 
 ## Deploy
