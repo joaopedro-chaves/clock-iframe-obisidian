@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000000;
+            /* Alterar fundo / change background color*/
+            font-family: 'Lexend', sans-serif;
+            /* Alterar fonte / change font-family*/
+            color: #000000;
+            overflow: hidden;
+        }
+
+        .clock-container {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            justify-content: right;
+            padding: 20px;
+        }
+
+        #time {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 10px;
+            color: #ffffff;
+            /* Alterar cor do relogio / change clock font-color*/
+        }
+
+        #date {
+            font-size: 2rem;
+            font-weight: 700;
+            text-transform: capitalize;
+            color: #dcdcdc;
+            /* Alterar cor da data / change date font-color*/
+        }
+
+        /* Ajuste para telas menores */
+        @media (max-width: 400px) {
+            #time {
+                font-size: 2.5rem;
+            }
+
+            #date {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="clock-container">
+        <div id="time">00:00:00</div>
+        <div id="date">Carregando data...</div>
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+
+            // Configurações para o fuso horário / Configure timezone
+            const timeOptions = {
+                timeZone: 'America/Sao_Paulo',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            };
+
+            const dateOptions = {
+                timeZone: 'America/Sao_Paulo',
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            };
+
+            const timeString = new Intl.DateTimeFormat('pt-BR', timeOptions).format(now); /* Horario / Time */
+            const dateString = new Intl.DateTimeFormat('pt-BR', dateOptions).format(now); /* Data / Date */
+
+            document.getElementById('time').textContent = timeString;
+            document.getElementById('date').textContent = dateString;
+        }
+
+        // Atualiza a cada segundo / Update every second
+        setInterval(updateClock, 1000);
+        // Chama imediatamente ao carregar / Call immediately when loading
+        updateClock();
+    </script>
+</body>
+
+</html>
