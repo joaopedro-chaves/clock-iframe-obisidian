@@ -24,4 +24,13 @@ git clone https://github.com/joaopedro-chaves/clock-iframe-obisidian
 
 Use o Github Pages para hospedar o arquivo direto no repositorio, ou se preferir use o Vercel, etc...
 
+## Alterando estilos
+
+No arquivo index.html, você pode alterar o estilo do relógio. 
+
+1. Cores: Altere as cores no arquivo index.html, `body: line 20`, `#time: line 37`, `#date: line 45`
+2. Fonte: Altere a fonte no arquivo index.html, `line: 8 ~ 10`
+3. Background: adicione uma imagem de fundo no arquivo index.html, `line: 21`
+4. Fuso Horário: Altere o fuso horário no arquivo index.html, `line: 78 ~ 92`
+
 
